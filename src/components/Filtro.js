@@ -1,45 +1,42 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
-
+import React from "react";
+import styled from "styled-components";
 const Container = styled.div`
-height: 80vh;
-padding: 25px 10px;
-gap: 15px;
-`
-
-
-const Titulo =styled.h3`
-margin-bottom: 10px;
-`
-
-
- class Filtro extends Component {
-  
+  input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  border: 1px solid black;
+  height: 60vh;
+  padding: 10px;
+  gap: 15px;
+`;
+class Filtros extends React.Component {
   render() {
-
     return (
-
-      <div>
-
-<Titulo>Filtros</Titulo>
-
-<label>Valor Minimo:
-  <input value={this.props.InputValorMinimo} onChange={this.props.onChangeInputValorMinimo}/>
-</label>
-
-<label>Valor Maximo:
-<input value={this.props.InputValorMaximo} onChange={this.props.onChangeInputValorMaximo}/>
-
-</label>
-
-<label> 
-  Buscar:
-  <input></input>
-</label>
-      </div>
-    )
+      <Container>
+        <h3>Filtros</h3>
+        Valor Mínimo:
+        <input
+          type="Number"
+          value={this.props.valorMinimo}
+          onChange={this.props.onChangeValorMinimo}
+        />
+        Valor Máximo:
+        <input
+          type="Number"
+          value={this.props.valorMaximo}
+          onChange={this.props.onChangeValorMaximo}
+        />
+        Buscar:
+        <input
+          type="text"
+          value={this.props.buscarProduto}
+          onChange={this.props.onChangeBusca}
+        />
+      </Container>
+    );
   }
 }
-
-export default Filtro;
+export default Filtros;
