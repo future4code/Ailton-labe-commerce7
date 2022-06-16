@@ -4,6 +4,18 @@ import Filtros from "./components/Filtro.js";
 import Produtos from "./components/Produtos.js";
 import Carrinho from "./components/Carrinho.js";
 
+const TextoRodape = styled.p`
+border: 2px solid red;
+`
+
+const ContainerProdutos = styled.div`
+border: 2px solid black;
+`
+
+const ContainerCarrinho = styled.div`
+border: 2px solid blue;
+`
+
 
 class App extends React.Component{
   state = {
@@ -35,15 +47,15 @@ class App extends React.Component{
       
         <div className="container">
           <header>header</header>
-          {/* <section className= "main-container"> */}
-        {/* <ContainerProdutos>
+          <section className= "main-container"> 
+         { <ContainerProdutos>
         <Produtos>
 
         </Produtos>
 
-        </ContainerProdutos> */}
+        </ContainerProdutos> }
 
-        {/* <ContainerCarrinho>
+         <ContainerCarrinho>
           <h3>Carrinho</h3>
           <div>Carrinhos</div>
           <p>Valor Totatl: </p>
@@ -55,14 +67,13 @@ class App extends React.Component{
             <b> No Copyright </b> </p>
           <TextoRodape>Larissa, Fabiano, Giovanna 
             </TextoRodape>
-            </footer> */}
+            </footer>
           </div>
 
          
       )
-    }
+    } }
   
-  }
   
     
 

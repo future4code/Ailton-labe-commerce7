@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 
-const Titulo =styled.h3`
-margin-bottom = 10px;
+const Container = styled.div`
+height: 80vh;
+padding: 25px 10px;
+gap: 15px;
 `
+
+
+const Titulo =styled.h3`
+margin-bottom: 10px;
+`
+
 
  class Filtro extends Component {
   
