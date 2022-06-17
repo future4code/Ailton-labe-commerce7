@@ -1,12 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import Produtos from "./Produtos";
+// import Produtos from "./Produtos";
 
 const Container = styled.div`
   background-image: white;
-  flex-wrap: nowrap;
-`;
+  text-align: justify;
+  border: 2px solid black;
+  img {
+    width: 5vw;
+    height: 10vh;
+  }
 
+  button {
+    font-size: 8px;
+    width: 2vw;
+    height: 4vh;
+    margin-top: 30px;
+  }
+`;
+const DivCarrinho = styled.div`
+  display: flex;
+  justify-content: baseline;
+`;
 const ListaProdutos = styled.p`
   background-image: white;
 `;
@@ -22,13 +37,21 @@ const BotaoExcluir = styled.button`
 
 class Carrinho extends React.Component {
   render() {
+    const addCarrinho = this.props.carrinho.map((item) => {
+      return (
+        <DivCarrinho>
+          {item.imagem}
+          <ListaProdutos>
+            Nome: {item.nome} <br />
+            Preço: R${item.preco},00
+          </ListaProdutos>
+          <BotaoExcluir onClick={this.props.excluir}>X</BotaoExcluir>
+        </DivCarrinho>
+      );
+    });
     return (
       <Container>
-        <ListaProdutos>
-          {this.props.quantidade} {this.props.nomeProduto}:{" "}
-          {this.props.valorProduto * this.props.quantidade}
-          <BotaoExcluir onClick={this.props.excluir}>EXCLUIR</BotaoExcluir>
-        </ListaProdutos>
+        <ListaProdutos>{addCarrinho}</ListaProdutos>
       </Container>
     );
   }
