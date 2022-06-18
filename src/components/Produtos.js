@@ -31,7 +31,7 @@ class Produtos extends React.Component {
               R${returnProduto.preco},00 <br />
               <button
                 onClick={() => {
-                  this.props.butao(returnProduto.id);
+                  this.props.botao(returnProduto.id);
                 }}
               >
                 Adicinar Carrinho

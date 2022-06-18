@@ -24,9 +24,6 @@ const TextoRodape = styled.p`
 const ContainerProdutos = styled.div`
   border: 2px solid black;
 `;
-// const ContainerCarrinho = styled.div`
-//   border: 2px solid blue;
-// `;
 const produtos = [
   {
     id: 1,
@@ -99,18 +96,16 @@ class App extends React.Component {
       (produtos) => produtoId === produtos.id
     );
     if (produtosCarrinho) {
-      const novosProdutosCarrinho = this.state.produtosCarrinho.map(
-        (produtos) => {
-          if (produtoId === produtos.id) {
-            return {
-              ...produtos,
-              quantidade: produtos.quantidade + 1,
-            };
-          }
-          return produtos;
+      const novosProdutosCarrinho = this.state.carrinho.map((produtos) => {
+        if (produtoId === produtos.id) {
+          return {
+            ...produtos,
+            quantidade: produtos.quantidade + 1,
+          };
         }
-      );
-      this.setState({ produtosCarrinho: novosProdutosCarrinho });
+        return produtos;
+      });
+      this.setState({ carrinho: novosProdutosCarrinho });
     } else {
       const produtoParaAdd = produtos.filter(
         (produtos) => produtoId === produtos.id
@@ -119,20 +114,23 @@ class App extends React.Component {
         ...this.state.produtosCarrinho,
         { ...produtoParaAdd, quantidade: 1 },
       ];
-      this.setState({ produtosCarrinho: novosProdutosCarrinho });
+      this.setState({ carrinho: novosProdutosCarrinho });
     }
   };
 
-  addCarrinho = (id) => {
-    const addProduto = produtos.filter((returnProduto, index) => {
-      if (id === returnProduto.id) {
-        return returnProduto;
-      }
-    });
+  // addCarrinho = (id) => {
+  //   const addProduto = produtos.filter((returnProduto, index) => {
+  //     if (id === returnProduto.id) {
+  //       return {
+  //         ...returnProduto,
+  //         quantidade: returnProduto.quantidade + 1,
+  //       };
+  //     }
+  //   });
 
-    const novoCarrinho = [...this.state.carrinho, addProduto[0]];
-    this.setState({ carrinho: novoCarrinho });
-  };
+  //   const novoCarrinho = [...this.state.carrinho, addProduto[0]];
+  //   this.setState({ carrinho: novoCarrinho });
+  // };
 
   render() {
     return (
@@ -142,10 +140,10 @@ class App extends React.Component {
           valorMaximo = {this.state.onChangevalorMaximo}
           buscarProduto = {this.state.onChangeBusca}
         </Filtros>
-        <section className="main-container">
+        <section>
           {
             <ContainerProdutos>
-              <Produtos lista={produtos} butao={this.addCarrinho} />
+              <Produtos lista={produtos} botao={this.onAddProdutoCarrinho} />
             </ContainerProdutos>
           }
           <Carrinho carrinho={this.state.carrinho} />
