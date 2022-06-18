@@ -8,7 +8,6 @@ const Container = styled.div`
     margin-bottom: 8px;
   }
   border: 1px solid black;
-  height: 60vh;
   padding: 10px;
   gap: 15px;
 `;
@@ -19,12 +18,14 @@ class Filtros extends React.Component {
         <h3>Filtros</h3>
         Valor Mínimo:
         <input
+          min={0}
           type="Number"
           value={this.props.valorMinimo}
           onChange={this.props.onChangeValorMinimo}
         />
         Valor Máximo:
         <input
+          min={0}
           type="Number"
           value={this.props.valorMaximo}
           onChange={this.props.onChangeValorMaximo}
