@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Carrinho from "./Carrinho";
 const DivLista = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, fr);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  justify-content: center;
+
+  /* grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, fr); */
   justify-items: center;
 `;
 const Lista = styled.div`
@@ -12,9 +17,13 @@ const Lista = styled.div`
     width: 100px;
     padding: 10px;
   }
+  button{
+    margin: 4px;
+   height: 30px;
+  }
   border: 1px solid black;
-  width: 20vw;
-  height: 28vh;
+  width: 230px;
+  height: 220px;
   text-align: center;
 `;
 
