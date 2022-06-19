@@ -259,7 +259,7 @@ class App extends React.Component {
         <Footer>
 <div>
 <img src="https://cdn-icons-png.flaticon.com/512/179/179319.png"/>
-          <img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494488.png?token=exp=1655518662~hmac=7707602d3d777b95550f82512b885d08"/>
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"/>
 </div>
         
         
