@@ -27,6 +27,7 @@ const Lista = styled.div`
     border: 1px solid purple;
     width: 150px;
     font: bold 10px verdana, sans-serif;
+    text-align: center;
   }
   border: 1px dashed purple;
   width: 230px;
