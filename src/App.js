@@ -45,9 +45,9 @@ const TextoRodape = styled.p`
   /* padding-top: 20px; */
 `
 const ContainerProdutos = styled.div`
-  border: 2px solid black;
-  background-color: #D8BFD8;
-  margin: 12px 0;
+  border: 0.5px solid purple;
+  background-color: #ead1dc;
+  margin: 0;
 `
 
 const Footer = styled.footer`
@@ -72,8 +72,20 @@ const Footer = styled.footer`
 const Ordenacao = styled.div`
   display: flex;
   justify-content: end;
-  padding: 5px;
+  padding: 2px;
+  height: 15px;
+  justify-content: space-between;
+  display: flex;
+  margin: 10px 2px 10px 2px;
+  align-items: center;
 `
+// const TextoProdutos = styled.h4 `
+// align-items: center;
+//   margin-left: 10px;
+//   margin-bottom: 3000px;
+//   display: inline;
+//   padding-bottom: 400px;
+// `
 // const ContainerCarrinho = styled.div`
 //   border: 2px solid blue;
 // `;
@@ -89,7 +101,7 @@ class App extends React.Component {
       },
       {
         id: 2,
-        nome: 'Anel Júpiter,',
+        nome: 'Anel Júpiter',
         preco: 69,
         imagem: <img src={Camiseta2} alt="" />
       },
@@ -140,7 +152,7 @@ class App extends React.Component {
     ordenacao: 'crescente',
     buscarProduto: '',
     valorMinimo: 0,
-    valorMaximo: 180,
+    valorMaximo: 3000,
     carrinho: []
   }
   onChangeValorMinimo = event => {
@@ -220,19 +232,23 @@ class App extends React.Component {
           valorMinimo = {this.state.onChangeValorMinimo}
           valorMaximo = {this.state.onChangevalorMaximo}
           buscarProduto = {this.state.onChangeBusca}
+          onChangeValorMaximo = {this.onChangeValorMinimo}
+          onChangeValorMaximo = {this.onChangeValorMaximo}
+          onChangeBusca = {this.onChangeBusca}
         </Filtros>
 
         <div>
           <ContainerProdutos>
             <Ordenacao>
+              <h3>PRODUTOS:</h3>
               <select onChange={this.onChangeOrdenacao}>
-                <option></option>
                 <option>crescente</option>
                 <option>decrescente</option>
               </select>
             </Ordenacao>
 
-            <Produtos lista={this.state.produtos} butao={this.addCarrinho} />
+            <Produtos lista={this.state.produtos} butao={this.addCarrinho}> 
+            </Produtos>
           </ContainerProdutos>
         </div>
 

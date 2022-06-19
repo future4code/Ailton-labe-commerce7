@@ -4,30 +4,37 @@ import carrinho from '../img/carrinho.png'
 // import Produtos from "./Produtos";
 
 const Container = styled.div`
-  background-image: white;
+  background-color: #ead1dc;
   text-align: justify;
   width: 300px;
-  border: 2px solid black;
+  border: 0.5px solid purple;
   display: flex;
   flex-direction: column;
   align-items: center;
   img {
-    height: 30px;
+    height: 20px;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
   }
-
+  
   button {
     font-size: 8px;
     width: 2vw;
     height: 4vh;
     margin-top: 30px;
   }
-`
+  `
 const DivCarrinho = styled.div`
   display: flex;
   justify-content: baseline;
+  border: 1px dashed purple;
+  height: fit-content;
+  font-size: small;
 `
 const ListaProdutos = styled.p`
   background-image: white;
+  
 `
 
 const BotaoExcluir = styled.button`
@@ -37,6 +44,7 @@ const BotaoExcluir = styled.button`
   align-content: flex-end;
   align-items: center;
   flex-shrink: 1;
+  border: 0.5px solid purple;
 `
 
 class Carrinho extends React.Component {
@@ -57,9 +65,10 @@ class Carrinho extends React.Component {
     })
     return (
       <Container>
-        <p>Carrinho</p>
-        <img src={carrinho} />
-        <ListaProdutos>{addCarrinho}</ListaProdutos>
+        <h3>CARRINHO</h3><img src={carrinho}/>
+        <ListaProdutos>
+          {addCarrinho}
+        </ListaProdutos>
       </Container>
     )
   }

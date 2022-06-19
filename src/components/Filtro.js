@@ -6,26 +6,27 @@ const Container = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 8px;
+    border: 1px solid gray;
   }
-  border: 1px solid black;
+  border: 0.5px solid purple;
   padding: 10px;
   gap: 15px;
+  background-color: #ead1dc;
 `;
+
 class Filtros extends React.Component {
   render() {
     return (
       <Container>
-        <h3>Filtros</h3>
+        <h3>FILTROS</h3>
         Valor Mínimo:
         <input
-          min={0}
           type="Number"
           value={this.props.valorMinimo}
           onChange={this.props.onChangeValorMinimo}
         />
         Valor Máximo:
         <input
-          min={0}
           type="Number"
           value={this.props.valorMaximo}
           onChange={this.props.onChangeValorMaximo}
