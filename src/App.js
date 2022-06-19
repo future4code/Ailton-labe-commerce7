@@ -262,8 +262,7 @@ class App extends React.Component {
           <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"/>
 </div>
         
-        
-          <TextoRodape>Larissa, Fabiano, Giovanna</TextoRodape>
+          <TextoRodape>Larissa Utermohl, Fabiano Lopes, Giovanna Magalhães</TextoRodape>
         </Footer>
       </AppContainer>
     )
