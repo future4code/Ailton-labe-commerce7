@@ -20,7 +20,6 @@ const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 120px 1fr 80px;
-/* gap: 8px; */
 `
 
 const  Header = styled.header`
