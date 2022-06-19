@@ -219,19 +219,25 @@ class App extends React.Component {
           valorMinimo = {this.state.onChangeValorMinimo}
           valorMaximo = {this.state.onChangevalorMaximo}
           buscarProduto = {this.state.onChangeBusca}
+          onChangeValorMaximo = {this.onChangeValorMinimo}
+          onChangeValorMaximo = {this.onChangeValorMaximo}
+          onChangeBusca = {this.onChangeBusca}
         </Filtros>
 
         <div>
           <ContainerProdutos>
             <Ordenacao>
+              <h3>PRODUTOS:</h3>
               <select onChange={this.onChangeOrdenacao}>
-                <option></option>
                 <option>crescente</option>
                 <option>decrescente</option>
               </select>
             </Ordenacao>
 
-            <Produtos lista={this.state.produtos} butao={this.addCarrinho} />
+            <Produtos
+              lista={this.state.produtos}
+              butao={this.addCarrinho}
+            ></Produtos>
           </ContainerProdutos>
         </div>
 
