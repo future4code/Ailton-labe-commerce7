@@ -1,35 +1,21 @@
-<<<<<<< HEAD
-import React from "react";
-import styled from "styled-components";
-import carrinho from "../img/carrinho.png";
-=======
 import React from 'react'
 import styled from 'styled-components'
 import carrinho from '../img/carrinho.png'
->>>>>>> 274cac0e560df40f4f95653cb74dac567e971e32
 // import Produtos from "./Produtos";
 
 const Container = styled.div`
   background-color: #ead1dc;
   text-align: justify;
   width: 300px;
-<<<<<<< HEAD
-  border: 2px solid black;
-=======
   border: 0.5px solid purple;
->>>>>>> 274cac0e560df40f4f95653cb74dac567e971e32
   display: flex;
   flex-direction: column;
   align-items: center;
   img {
-<<<<<<< HEAD
-    height: 30px;
-=======
     height: 20px;
     display: flex;
     align-items: baseline;
     flex-direction: row;
->>>>>>> 274cac0e560df40f4f95653cb74dac567e971e32
   }
   
   button {
@@ -80,16 +66,10 @@ class Carrinho extends React.Component {
     })
     return (
       <Container>
-<<<<<<< HEAD
-        <p>Carrinho</p>
-        <img src={carrinho} />
-        <ListaProdutos>{addCarrinho}</ListaProdutos>
-=======
         <h3>CARRINHO</h3><img src={carrinho}/>
         <ListaProdutos>
           {addCarrinho}
         </ListaProdutos>
->>>>>>> 274cac0e560df40f4f95653cb74dac567e971e32
       </Container>
     )
   }
