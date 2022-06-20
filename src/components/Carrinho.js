@@ -38,13 +38,14 @@ const ListaProdutos = styled.p`
 `
 
 const BotaoExcluir = styled.button`
-  width: 100px;
-  margin-left: 10px;
+  width: 130px;
+  margin-left: 5px;
   display: inline-block;
   align-content: flex-end;
-  align-items: center;
-  flex-shrink: 1;
+  align-items: space-between;
+  flex-shrink: 5;
   border: 0.5px solid purple;
+  text-align: center;
 `
 
 class Carrinho extends React.Component {
