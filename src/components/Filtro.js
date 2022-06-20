@@ -18,24 +18,27 @@ class Filtros extends React.Component {
   render() {
     return (
       <Container>
-        <h3>FILTROS</h3>
+        <h3>Filtros</h3>
         Valor Mínimo:
         <input
           type="Number"
-          value={this.props.valorMinimo}
-          onChange={this.props.onChangeValorMinimo}
+          value={this.props.numMin}
+          onChange={this.props.onValorMinimo}
+          placeholder="Valor Minimo"
         />
         Valor Máximo:
         <input
           type="Number"
-          value={this.props.valorMaximo}
-          onChange={this.props.onChangeValorMaximo}
+          value={this.props.numMax}
+          onChange={this.props.onValorMaximo}
+          placeholder="Valor Máximo"
         />
         Buscar:
         <input
           type="text"
-          value={this.props.buscarProduto}
-          onChange={this.props.onChangeBusca}
+          value={this.props.buscar}
+          onChange={this.props.onBuscarProduto}
+          placeholder="Buscar"
         />
       </Container>
     );
