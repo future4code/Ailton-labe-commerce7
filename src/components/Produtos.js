@@ -40,23 +40,44 @@ class Produtos extends React.Component {
   render() {
     return (
       <DivLista>
-        {this.props.lista.map((returnProduto, index) => {
-          return (
-            <Lista key={index}>
-              {returnProduto.imagem}
-              <br />
-              <b>{returnProduto.nome}</b> <br />
-              R${returnProduto.preco},00 <br />
-              <button
-                onClick={() => {
-                  this.props.butao(returnProduto.id);
-                }}
-              >
-                Adicionar ao Carrinho
-              </button>
-            </Lista>
-          );
-        })}
+        {this.props.lista
+          .filter((returnProduto) => {
+            return returnProduto.nome
+              .toLowerCase()
+              .includes(this.props.buscaNome.toLowerCase());
+          })
+
+          .filter((returnProduto) => {
+            return (
+              this.props.buscaMax === "" ||
+              returnProduto.preco <= this.props.buscaMax
+            );
+          })
+
+          .filter((returnProduto) => {
+            return (
+              this.props.buscaMin === "" ||
+              returnProduto.preco >= this.props.buscaMin
+            );
+          })
+
+          .map((returnProduto, index) => {
+            return (
+              <Lista key={index}>
+                {returnProduto.imagem}
+                <br />
+                {returnProduto.nome} <br />
+                R${returnProduto.preco},00 <br />
+                <button
+                  onClick={() => {
+                    this.props.butao(returnProduto.id);
+                  }}
+                >
+                  Adicinar Carrinho
+                </button>
+              </Lista>
+            );
+          })}
       </DivLista>
     );
   }
